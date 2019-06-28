@@ -1,0 +1,168 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    list-style: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.IndexContent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url(loginBG.jpg) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginBox {
+    width: 78vh;
+    height: 50vh;
+    position: relative;
+}
+
+.LoginTitle {
+    width: 100%;
+    height: 8vh;
+    font-size: 3vh;
+    font-weight: 600;
+    text-align: center;
+    color: #414141;
+}
+
+.LoginContent {
+    width: 100%;
+    height: 42vh;
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px #084fa5;
+    box-shadow: 0 3px 15px rgba(8,79,165,0.3);
+}
+
+.LoginContentLeft {
+    width: 42vh;
+    height: 42vh;
+    float: left;
+    overflow: hidden;
+    background: #2382ff;
+    padding: 2vh 1vw;
+    box-sizing: border-box;
+}
+
+    .LoginContentLeft p {
+        width: 100%;
+        height: 8vh;
+        line-height: 8vh;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 1.2vw;
+    }
+
+.IconBox {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .IconBox i {
+        display: block;
+        width: 100%;
+        height: 30vh;
+        background: url(loginImg.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+    }
+
+.LoginContentRight {
+    width: 36vh;
+    height: 42vh;
+    float: right;
+    overflow: hidden;
+    padding: 2vh 1vw;
+    box-sizing: border-box;
+}
+
+.LoginContentTitle {
+    width: 100%;
+    height: 4vh;
+    font-size: 1.8vh;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: solid 1px #e5e5e5;
+    box-sizing: border-box;
+    color: #414141;
+}
+
+.LoginInfo {
+    width: 100%;
+    height: 20.5vh;
+    margin: 3vh 0;
+}
+
+    .LoginInfo li {
+        width: 100%;
+        height: 11vh;
+        overflow: hidden;
+    }
+
+        .LoginInfo li p {
+            width: 100%;
+            height: 4vh;
+            font-size: 1.8vh;
+            color: #666666;
+        }
+
+        .LoginInfo li div {
+            width: 100%;
+            height: 5.5vh;
+            overflow: hidden;
+            border: solid 1px #dcdcdc;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 0 1vw;
+        }
+
+            .LoginInfo li div input {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background: #000000;
+                background: rgba(0,0,0,0);
+                outline: none;
+                font-size: 1.8vh;
+                color: #666666;
+            }
+
+        .LoginInfo li.active div {
+            background: #f1f8ff;
+            border-color: #bcd9f6;
+        }
+
+.SubmitBtn {
+    width: 100%;
+    height: 5.5vh;
+    line-height: 5.5vh;
+    background: #0074e8;
+    color: #FFFFFF;
+    font-size: 1.6vh;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}

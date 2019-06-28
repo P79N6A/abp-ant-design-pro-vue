@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15683EAE-3243-47F8-B802-3BB335B640D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Niue.Abp</RootNamespace>
+    <AssemblyName>Niue.Abp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.3.4.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=1.4.11.0, Culture=neutral, PublicKeyToken=146423a1b8d60775, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.1.4.11\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.6.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.6.8\lib\net45\Hangfire.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=10.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.3.0\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abp.AutoMapper\AutoMapper\AbpAutoMapperConfiguration.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AbpAutoMapperConfigurationExtensions.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AbpAutoMapperModule.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapAttribute.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapAttributeBase.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapExtensions.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapFromAttribute.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapperConfigurationExtensions.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapperObjectMapper.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\AutoMapToAttribute.cs" />
+    <Compile Include="Abp.AutoMapper\AutoMapper\IAbpAutoMapperConfiguration.cs" />
+    <Compile Include="Abp.Castle.Log4Net\Castle\Logging\Log4Net\AbpCastleLog4NetModule.cs" />
+    <Compile Include="Abp.Castle.Log4Net\Castle\Logging\Log4Net\Log4NetLogger.cs" />
+    <Compile Include="Abp.Castle.Log4Net\Castle\Logging\Log4Net\Log4NetLoggerFactory.cs" />
+    <Compile Include="Abp.Castle.Log4Net\Castle\Logging\Log4Net\LoggingFacilityExtensions.cs" />
+    <Compile Include="Abp.EntityFramework.Common\AutoRepositoryTypesAttribute.cs" />
+    <Compile Include="Abp.EntityFramework.Common\DbContextTypeMatcher.cs" />
+    <Compile Include="Abp.EntityFramework.Common\DefaultDbContextAttribute.cs" />
+    <Compile Include="Abp.EntityFramework.Common\EntityTypeInfo.cs" />
+    <Compile Include="Abp.EntityFramework.Common\IDbContextTypeMatcher.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\AbpDbContext.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\AbpEntityFrameworkModule.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\DbContextHelper.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\DbContextTypeMatcher.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\DefaultDbContextResolver.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\IDbContextProvider.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\IDbContextResolver.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Interceptors\WithNolockInterceptor.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Linq\EfAsyncQueryableExecuter.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\EfAutoRepositoryTypes.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\EfRepositoryBaseOfTEntity.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\EfRepositoryBaseOfTEntityAndTPrimaryKey.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\EfRepositoryExtensions.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\EntityFrameworkGenericRepositoryRegistrar.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\IEntityFrameworkGenericRepositoryRegistrar.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Repositories\IRepositoryWithDbContext.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\SimpleDbContextProvider.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\ActiveDbContextInfo.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\ActiveTransactionInfo.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\DbContextEfTransactionStrategy.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\EfDynamicFiltersUnitOfWorkFilterExecuter.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\EfUnitOfWork.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\IEfTransactionStrategy.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\IEfUnitOfWorkFilterExecuter.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\TransactionScopeEfTransactionStrategy.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\UnitOfWorkDbContextProvider.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Uow\UnitOfWorkExtensions.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Utils\DateTimePropertyInfoHelper.cs" />
+    <Compile Include="Abp.EntityFramework\EntityFramework\Utils\EntityDateTimePropertiesInfo.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\AbpHangfireAuthorizationFilter.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\AbpHangfireJobExceptionFilter.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\AbpHangfireModule.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\Configuration\AbpHangfireConfiguration.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\Configuration\AbpHangfireModuleConfigurationExtensions.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\Configuration\IAbpHangfireConfiguration.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\HangfireBackgroundJobManager.cs" />
+    <Compile Include="Abp.HangFire\Hangfire\HangfireIocJobActivator.cs" />
+    <Compile Include="Abp.Owin\AbpOwinExtensions.cs" />
+    <Compile Include="Abp.Owin\AbpOwinModule.cs" />
+    <Compile Include="Abp.Owin\AbpOwinOptions.cs" />
+    <Compile Include="Abp.Owin\EmbeddedResources\AbpOwinEmbeddedResourceFileInfo.cs" />
+    <Compile Include="Abp.Owin\EmbeddedResources\AbpOwinEmbeddedResourceFileSystem.cs" />
+    <Compile Include="Abp.Web.Api\Configuration\Startup\AbpWebApiConfigurationExtensions.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\AbpWebApiModule.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Auditing\AbpApiAuditFilter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Authorization\AbpApiAuthorizeAttribute.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Authorization\AbpApiAuthorizeFilter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Client\AbpRemoteCallException.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Client\AbpWebApiClient.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Client\IAbpWebApiClient.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Configuration\AbpWebApiConfiguration.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Configuration\IAbpWebApiConfiguration.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\AbpApiController.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\AbpApiControllerActivator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\ApiControllerConventionalRegistrar.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\ApiExplorer\AbpApiExplorer.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\ApiExplorer\AbpHttpActionDescriptor.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Binders\AbpApiDateTimeBinder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\ApiControllerActionBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\ApiControllerBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\BatchApiControllerBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\DynamicApiControllerActionHelper.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\DynamicApiControllerBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\DynamicApiServiceNameHelper.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\DynamicApiVerbHelper.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\IApiControllerActionBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\IApiControllerBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\IBatchApiControllerBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Builders\IDynamicApiControllerBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Clients\ApiClientBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Clients\DynamicApiClientBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Clients\IApiClientBuilder.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Clients\IDynamicApiClient.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\DynamicApiController.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\DynamicApiControllerInfo.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\DynamicApiControllerManager.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\DynamicApiMethodInfo.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Formatters\PlainTextFormatter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\IDynamicApiController.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Interceptors\AbpDynamicApiControllerInterceptor.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\AbpServiceProxiesController.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\ActionScriptingHelper.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\Angular\AngularActionScriptWriter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\Angular\AngularProxyGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\IScriptProxyGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\jQuery\JQueryActionScriptGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\jQuery\JQueryProxyGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\ProxyScriptType.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\ScriptProxyManager.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\TypeScriptController.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\TypeScript\TypeScriptDefinitionGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\TypeScript\TypeScriptDefinitionProxyGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\TypeScript\TypeScriptHelper.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\TypeScript\TypeScriptServiceGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Scripting\TypeScript\TypeScriptServiceProxyGenerator.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Selectors\AbpApiControllerActionSelector.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Selectors\AbpHttpControllerSelector.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Selectors\DynamicHttpActionDescriptor.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Selectors\DynamicHttpControllerDescriptor.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\Dynamic\Selectors\HttpVerbExtensions.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\HttpActionDescriptorHelper.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Controllers\ResultWrapperHandler.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\ExceptionHandling\AbpApiExceptionFilterAttribute.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Extensions\HttpResponseHeadersExtensions.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Runtime\Caching\AbpCacheController.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Runtime\Caching\ClearAllCacheModel.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Runtime\Caching\ClearCacheModel.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Runtime\Caching\ClearCacheSettingNames.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Runtime\Caching\ClearCacheSettingProvider.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Security\AntiForgery\AbpAntiForgeryApiFilter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Uow\AbpApiUowFilter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Validation\AbpApiValidationFilter.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Validation\ActionDescriptorExtensions.cs" />
+    <Compile Include="Abp.Web.Api\WebApi\Validation\WebApiActionInvocationValidator.cs" />
+    <Compile Include="Abp.Web.Api\Web\Security\AntiForgery\AbpAntiForgeryManagerWebApiExtensions.cs" />
+    <Compile Include="Abp.Web.Common\Configuration\Startup\AbpWebConfigurationExtensions.cs" />
+    <Compile Include="Abp.Web.Common\Web\AbpWebCommonModule.cs" />
+    <Compile Include="Abp.Web.Common\Web\AbpWebConsts.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\ActionApiDescriptionModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\ApplicationApiDescriptionModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\ControllerApiDescriptionModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\IApiDescriptionModelProvider.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\ModuleApiDescriptionModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\ParameterApiDescriptionModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\Modeling\ReturnValueApiDescriptionModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\ApiProxyGenerationOptions.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\ApiProxyScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Configuration\ApiProxyScriptingConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Configuration\IApiProxyScriptingConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Generators\IProxyScriptGenerator.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Generators\JQuery\JQueryProxyScriptGenerator.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Generators\ParameterBindingSources.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Generators\ProxyScriptingHelper.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\Generators\ProxyScriptingJsFuncHelper.cs" />
+    <Compile Include="Abp.Web.Common\Web\Api\ProxyScripting\IApiProxyScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Authorization\AuthorizationScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Authorization\IAuthorizationScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Configuration\AbpUserConfigurationBuilder.cs" />
+    <Compile Include="Abp.Web.Common\Web\Configuration\AbpWebCommonModuleConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Configuration\IAbpWebCommonModuleConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Configuration\IWebEmbeddedResourcesConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Configuration\WebEmbeddedResourcesConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Features\FeaturesScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Features\IFeaturesScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\HttpVerb.cs" />
+    <Compile Include="Abp.Web.Common\Web\HttpVerbHelper.cs" />
+    <Compile Include="Abp.Web.Common\Web\Localization\ILocalizationScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Localization\LocalizationScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpLocalizationSourceDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpMultiTenancyConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpMultiTenancySidesConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpStringValueDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserAntiForgeryConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserAuthConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserClockConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserConfigurationDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserCurrentCultureConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserFeatureConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserIanaTimeZoneConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserLocalizationConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserNavConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserSecurityConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserSessionConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserSettingConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserTimeZoneConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserTimingConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AbpUserConfiguration\AbpUserWindowsTimeZoneConfigDto.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AjaxResponse.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AjaxResponseBase.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\AjaxResponseOfTResult.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\DefaultErrorInfoConverter.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\ErrorInfo.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\ErrorInfoBuilder.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\IErrorInfoBuilder.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\IExceptionToErrorInfoConverter.cs" />
+    <Compile Include="Abp.Web.Common\Web\Models\ValidationErrorInfo.cs" />
+    <Compile Include="Abp.Web.Common\Web\MultiTenancy\IMultiTenancyScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\MultiTenancy\IWebMultiTenancyConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\MultiTenancy\MultiTenancyScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\MultiTenancy\WebMultiTenancyConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Mvc\Models\ErrorViewModel.cs" />
+    <Compile Include="Abp.Web.Common\Web\Navigation\INavigationScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Navigation\NavigationScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\AntiForgery\AbpAntiForgeryConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\AntiForgery\AbpAntiForgeryManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\AntiForgery\IAbpAntiForgeryConfiguration.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\AntiForgery\IAbpAntiForgeryManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\AntiForgery\IAbpAntiForgeryValidator.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\ISecurityScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Security\SecurityScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Sessions\ISessionScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Sessions\SessionScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Settings\ISettingScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Settings\SettingScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Timing\ITimingScriptManager.cs" />
+    <Compile Include="Abp.Web.Common\Web\Timing\TimingScriptManager.cs" />
+    <Compile Include="Abp.Web.Mvc\Application\Services\Dto\ComboboxItemDtoExtensions.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\AbpWebMvcModule.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Auditing\AbpAuditFilterData.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Auditing\AbpMvcAuditFilter.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeAttribute.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Authorization\AbpMvcAuthorizeFilter.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Configuration\AbpMvcConfiguration.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Configuration\AbpMvcConfigurationExtensions.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Configuration\IAbpMvcConfiguration.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\AbpAppViewController.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\AbpController.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\AbpScriptsController.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\AbpUserConfigurationController.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\ControllerConventionalRegistrar.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\Localization\AbpLocalizationController.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\Results\AbpJsonResult.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Controllers\WindsorControllerFactory.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Extensions\ActionDescriptorExtensions.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Extensions\HtmlHelperResourceExtensions.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Helpers\MethodInfoHelper.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\ModelBinding\Binders\AbpMvcDateTimeBinder.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Models\ModelStateExtensions.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Resources\Embedded\EmbeddedResourceItemCacheDependency.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Resources\Embedded\EmbeddedResourceItemVirtualFile.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Resources\Embedded\EmbeddedResourceVirtualPathProvider.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Resources\Embedded\Handlers\EmbeddedResourceHttpHandler.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Resources\Embedded\Handlers\EmbeddedResourceRouteHandler.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Resources\WebResourceHelper.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Security\AntiForgery\AbpAntiForgeryMvcFilter.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Security\AntiForgery\AbpMvcAntiForgeryTokenManager.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Uow\AbpMvcUowFilter.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Validation\AbpMvcValidationFilter.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Validation\MvcActionInvocationValidator.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Views\AbpWebViewPage.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Mvc\Views\AbpWebViewPageOfTModel.cs" />
+    <Compile Include="Abp.Web.Mvc\Web\Security\AntiForgery\AbpAntiForgeryManagerMvcExtensions.cs" />
+    <Compile Include="Abp.Web.SignalR\Web\SignalR\AbpSignalRContractResolver.cs" />
+    <Compile Include="Abp.Web.SignalR\Web\SignalR\AbpWebSignalRModule.cs" />
+    <Compile Include="Abp.Web.SignalR\Web\SignalR\Hubs\AbpCommonHub.cs" />
+    <Compile Include="Abp.Web.SignalR\Web\SignalR\Notifications\SignalRRealTimeNotifier.cs" />
+    <Compile Include="Abp.Web.SignalR\Web\SignalR\WindsorDependencyResolver.cs" />
+    <Compile Include="Abp.Web\Auditing\WebClientInfoProvider.cs" />
+    <Compile Include="Abp.Web\Configuration\Startup\AbpWebConfigurationExtensions.cs" />
+    <Compile Include="Abp.Web\Web\AbpUrlHelper.cs" />
+    <Compile Include="Abp.Web\Web\AbpWebApplication.cs" />
+    <Compile Include="Abp.Web\Web\AbpWebModule.cs" />
+    <Compile Include="Abp.Web\Web\Configuration\AbpWebLocalizationConfiguration.cs" />
+    <Compile Include="Abp.Web\Web\Configuration\AbpWebModuleConfiguration.cs" />
+    <Compile Include="Abp.Web\Web\Configuration\IAbpWebLocalizationConfiguration.cs" />
+    <Compile Include="Abp.Web\Web\Configuration\IAbpWebModuleConfiguration.cs" />
+    <Compile Include="Abp.Web\Web\Localization\CurrentCultureSetter.cs" />
+    <Compile Include="Abp.Web\Web\Localization\ICurrentCultureSetter.cs" />
+    <Compile Include="Abp.Web\Web\MultiTenancy\DomainTenantResolveContributor.cs" />
+    <Compile Include="Abp.Web\Web\MultiTenancy\HttpContextTenantResolverCache.cs" />
+    <Compile Include="Abp.Web\Web\MultiTenancy\HttpCookieTenantResolveContributor.cs" />
+    <Compile Include="Abp.Web\Web\MultiTenancy\HttpHeaderTenantResolveContributor.cs" />
+    <Compile Include="Abp.Web\Web\PlugInSourceExtensions.cs" />
+    <Compile Include="Abp.Web\Web\Security\AntiForgery\AbpAntiForgeryManagerWebExtensions.cs" />
+    <Compile Include="Abp.Web\Web\Security\AntiForgery\AbpAntiForgeryWebConfiguration.cs" />
+    <Compile Include="Abp.Web\Web\Security\AntiForgery\DisableAbpAntiForgeryTokenValidationAttribute.cs" />
+    <Compile Include="Abp.Web\Web\Security\AntiForgery\IAbpAntiForgeryWebConfiguration.cs" />
+    <Compile Include="Abp.Web\Web\Security\AntiForgery\ValidateAbpAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Abp.Web\Web\Session\HttpContextPrincipalAccessor.cs" />
+    <Compile Include="Abp\AbpBootstrapper.cs" />
+    <Compile Include="Abp\AbpConsts.cs" />
+    <Compile Include="Abp\AbpException.cs" />
+    <Compile Include="Abp\AbpInitializationException.cs" />
+    <Compile Include="Abp\AbpKernelModule.cs" />
+    <Compile Include="Abp\AbpServiceBase.cs" />
+    <Compile Include="Abp\Application\Features\Feature.cs" />
+    <Compile Include="Abp\Application\Features\FeatureChecker.cs" />
+    <Compile Include="Abp\Application\Features\FeatureCheckerExtensions.cs" />
+    <Compile Include="Abp\Application\Features\FeatureConfiguration.cs" />
+    <Compile Include="Abp\Application\Features\FeatureDefinitionContextBase.cs" />
+    <Compile Include="Abp\Application\Features\FeatureDependencyContext.cs" />
+    <Compile Include="Abp\Application\Features\FeatureDependencyExtensions.cs" />
+    <Compile Include="Abp\Application\Features\FeatureDictionary.cs" />
+    <Compile Include="Abp\Application\Features\FeatureManager.cs" />
+    <Compile Include="Abp\Application\Features\FeatureProvider.cs" />
+    <Compile Include="Abp\Application\Features\FeatureScopes.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureChecker.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureConfiguration.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureDefinitionContext.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureDependency.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureDependencyContext.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureManager.cs" />
+    <Compile Include="Abp\Application\Features\IFeatureValueStore.cs" />
+    <Compile Include="Abp\Application\Features\NullFeatureValueStore.cs" />
+    <Compile Include="Abp\Application\Features\RequiresFeatureAttribute.cs" />
+    <Compile Include="Abp\Application\Features\SimpleFeatureDependency.cs" />
+    <Compile Include="Abp\Application\Navigation\HasMenuItemDefinitionsExtensions.cs" />
+    <Compile Include="Abp\Application\Navigation\IHasMenuItemDefinitions.cs" />
+    <Compile Include="Abp\Application\Navigation\INavigationManager.cs" />
+    <Compile Include="Abp\Application\Navigation\INavigationProviderContext.cs" />
+    <Compile Include="Abp\Application\Navigation\IUserNavigationManager.cs" />
+    <Compile Include="Abp\Application\Navigation\MenuDefinition.cs" />
+    <Compile Include="Abp\Application\Navigation\MenuItemDefinition.cs" />
+    <Compile Include="Abp\Application\Navigation\MenuItemDefinitionExtensions.cs" />
+    <Compile Include="Abp\Application\Navigation\NavigationManager.cs" />
+    <Compile Include="Abp\Application\Navigation\NavigationProvider.cs" />
+    <Compile Include="Abp\Application\Navigation\NavigationProviderContext.cs" />
+    <Compile Include="Abp\Application\Navigation\UserMenu.cs" />
+    <Compile Include="Abp\Application\Navigation\UserMenuItem.cs" />
+    <Compile Include="Abp\Application\Navigation\UserNavigationManager.cs" />
+    <Compile Include="Abp\Application\Services\ApplicationService.cs" />
+    <Compile Include="Abp\Application\Services\AsyncCrudAppService.cs" />
+    <Compile Include="Abp\Application\Services\CrudAppService.cs" />
+    <Compile Include="Abp\Application\Services\CrudAppServiceBase.cs" />
+    <Compile Include="Abp\Application\Services\Dto\AuditedEntityDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\ComboboxItemDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\CreationAuditedEntityDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\EntityDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\FullAuditedEntityDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IEntityDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IHasLongTotalCount.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IHasTotalCount.cs" />
+    <Compile Include="Abp\Application\Services\Dto\ILimitedResultRequest.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IListResult.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IPagedAndSortedResultRequest.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IPagedResult.cs" />
+    <Compile Include="Abp\Application\Services\Dto\IPagedResultRequest.cs" />
+    <Compile Include="Abp\Application\Services\Dto\ISortedResultRequest.cs" />
+    <Compile Include="Abp\Application\Services\Dto\LimitedResultRequestDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\ListResultDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\NameValueDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\NullableIdDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\PagedAndSortedResultRequestDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\PagedResultDto.cs" />
+    <Compile Include="Abp\Application\Services\Dto\PagedResultRequestDto.cs" />
+    <Compile Include="Abp\Application\Services\IApplicationService.cs" />
+    <Compile Include="Abp\Application\Services\IAsyncCrudAppService.cs" />
+    <Compile Include="Abp\Application\Services\IAvoidDuplicateCrossCuttingConcerns.cs" />
+    <Compile Include="Abp\Application\Services\ICrudAppService.cs" />
+    <Compile Include="Abp\Application\Services\RemoteServiceAttribute.cs" />
+    <Compile Include="Abp\Aspects\AbpCrossCuttingConcerns.cs" />
+    <Compile Include="Abp\Aspects\AspectAttribute.cs" />
+    <Compile Include="Abp\Auditing\AuditedAttribute.cs" />
+    <Compile Include="Abp\Auditing\AuditInfo.cs" />
+    <Compile Include="Abp\Auditing\AuditingConfiguration.cs" />
+    <Compile Include="Abp\Auditing\AuditingContractResolver.cs" />
+    <Compile Include="Abp\Auditing\AuditingHelper.cs" />
+    <Compile Include="Abp\Auditing\AuditingInterceptor.cs" />
+    <Compile Include="Abp\Auditing\AuditingInterceptorRegistrar.cs" />
+    <Compile Include="Abp\Auditing\AuditingSelectorList.cs" />
+    <Compile Include="Abp\Auditing\AuditingStoreExtensions.cs" />
+    <Compile Include="Abp\Auditing\DisableAuditingAttribute.cs" />
+    <Compile Include="Abp\Auditing\IAuditInfoProvider.cs" />
+    <Compile Include="Abp\Auditing\IAuditingConfiguration.cs" />
+    <Compile Include="Abp\Auditing\IAuditingHelper.cs" />
+    <Compile Include="Abp\Auditing\IAuditingSelectorList.cs" />
+    <Compile Include="Abp\Auditing\IAuditingStore.cs" />
+    <Compile Include="Abp\Auditing\IAuditSerializer.cs" />
+    <Compile Include="Abp\Auditing\IClientInfoProvider.cs" />
+    <Compile Include="Abp\Auditing\JsonNetAuditSerializer.cs" />
+    <Compile Include="Abp\Auditing\NullAuditInfoProvider.cs" />
+    <Compile Include="Abp\Auditing\NullClientInfoProvider.cs" />
+    <Compile Include="Abp\Auditing\SimpleLogAuditingStore.cs" />
+    <Compile Include="Abp\Authorization\AbpAllowAnonymousAttribute.cs" />
+    <Compile Include="Abp\Authorization\AbpAuthorizationException.cs" />
+    <Compile Include="Abp\Authorization\AbpAuthorizeAttribute.cs" />
+    <Compile Include="Abp\Authorization\AuthorizationHelper.cs" />
+    <Compile Include="Abp\Authorization\AuthorizationHelperExtensions.cs" />
+    <Compile Include="Abp\Authorization\AuthorizationInterceptor.cs" />
+    <Compile Include="Abp\Authorization\AuthorizationInterceptorRegistrar.cs" />
+    <Compile Include="Abp\Authorization\AuthorizationProvider.cs" />
+    <Compile Include="Abp\Authorization\IAbpAllowAnonymousAttribute.cs" />
+    <Compile Include="Abp\Authorization\IAbpAuthorizeAttribute.cs" />
+    <Compile Include="Abp\Authorization\IAuthorizationHelper.cs" />
+    <Compile Include="Abp\Authorization\IPermissionChecker.cs" />
+    <Compile Include="Abp\Authorization\IPermissionDefinitionContext.cs" />
+    <Compile Include="Abp\Authorization\IPermissionDependency.cs" />
+    <Compile Include="Abp\Authorization\IPermissionDependencyContext.cs" />
+    <Compile Include="Abp\Authorization\IPermissionManager.cs" />
+    <Compile Include="Abp\Authorization\NullPermissionChecker.cs" />
+    <Compile Include="Abp\Authorization\Permission.cs" />
+    <Compile Include="Abp\Authorization\PermissionCheckerExtensions.cs" />
+    <Compile Include="Abp\Authorization\PermissionDefinitionContextBase.cs" />
+    <Compile Include="Abp\Authorization\PermissionDependencyContext.cs" />
+    <Compile Include="Abp\Authorization\PermissionDependencyExtensions.cs" />
+    <Compile Include="Abp\Authorization\PermissionDictionary.cs" />
+    <Compile Include="Abp\Authorization\PermissionFinder.cs" />
+    <Compile Include="Abp\Authorization\PermissionManager.cs" />
+    <Compile Include="Abp\Authorization\SimplePermissionDependency.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJob.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJobConfiguration.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJobException.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJobInfo.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJobManager.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJobManagerExtensions.cs" />
+    <Compile Include="Abp\BackgroundJobs\BackgroundJobPriority.cs" />
+    <Compile Include="Abp\BackgroundJobs\IBackgroundJob.cs" />
+    <Compile Include="Abp\BackgroundJobs\IBackgroundJobConfiguration.cs" />
+    <Compile Include="Abp\BackgroundJobs\IBackgroundJobManager.cs" />
+    <Compile Include="Abp\BackgroundJobs\IBackgroundJobStore.cs" />
+    <Compile Include="Abp\BackgroundJobs\InMemoryBackgroundJobStore.cs" />
+    <Compile Include="Abp\BackgroundJobs\NullBackgroundJobStore.cs" />
+    <Compile Include="Abp\Check.cs" />
+    <Compile Include="Abp\Collections\Extensions\CollectionExtensions.cs" />
+    <Compile Include="Abp\Collections\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Abp\Collections\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Abp\Collections\Extensions\ListExtensions.cs" />
+    <Compile Include="Abp\Collections\ITypeList.cs" />
+    <Compile Include="Abp\Collections\TypeList.cs" />
+    <Compile Include="Abp\Configuration\CacheManagerSettingExtensions.cs" />
+    <Compile Include="Abp\Configuration\DefaultConfigSettingStore.cs" />
+    <Compile Include="Abp\Configuration\DictionaryBasedConfig.cs" />
+    <Compile Include="Abp\Configuration\IDictionaryBasedConfig.cs" />
+    <Compile Include="Abp\Configuration\ISettingDefinitionManager.cs" />
+    <Compile Include="Abp\Configuration\ISettingManager.cs" />
+    <Compile Include="Abp\Configuration\ISettingStore.cs" />
+    <Compile Include="Abp\Configuration\ISettingValue.cs" />
+    <Compile Include="Abp\Configuration\SettingDefinition.cs" />
+    <Compile Include="Abp\Configuration\SettingDefinitionGroup.cs" />
+    <Compile Include="Abp\Configuration\SettingDefinitionManager.cs" />
+    <Compile Include="Abp\Configuration\SettingDefinitionProviderContext.cs" />
+    <Compile Include="Abp\Configuration\SettingInfo.cs" />
+    <Compile Include="Abp\Configuration\SettingManager.cs" />
+    <Compile Include="Abp\Configuration\SettingManagerExtensions.cs" />
+    <Compile Include="Abp\Configuration\SettingProvider.cs" />
+    <Compile Include="Abp\Configuration\SettingScope.cs" />
+    <Compile Include="Abp\Configuration\Startup\AbpStartupConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\AbpStartupConfigurationExtensions.cs" />
+    <Compile Include="Abp\Configuration\Startup\AuthorizationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\EventBusConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\IAbpStartupConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\IAuthorizationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\IEventBusConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\ILocalizationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\ILocalizationSourceList.cs" />
+    <Compile Include="Abp\Configuration\Startup\IModuleConfigurations.cs" />
+    <Compile Include="Abp\Configuration\Startup\IMultiTenancyConfig.cs" />
+    <Compile Include="Abp\Configuration\Startup\INavigationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\ISettingsConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\IValidationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\LocalizationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\LocalizationSourceList.cs" />
+    <Compile Include="Abp\Configuration\Startup\ModuleConfigurations.cs" />
+    <Compile Include="Abp\Configuration\Startup\MultiTenancyConfig.cs" />
+    <Compile Include="Abp\Configuration\Startup\NavigationConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\SettingsConfiguration.cs" />
+    <Compile Include="Abp\Configuration\Startup\ValidationConfiguration.cs" />
+    <Compile Include="Abp\Dependency\BasicConventionalRegistrar.cs" />
+    <Compile Include="Abp\Dependency\ConventionalRegistrationConfig.cs" />
+    <Compile Include="Abp\Dependency\ConventionalRegistrationContext.cs" />
+    <Compile Include="Abp\Dependency\DependencyLifeStyle.cs" />
+    <Compile Include="Abp\Dependency\DisposableDependencyObjectWrapperOfT.cs" />
+    <Compile Include="Abp\Dependency\IConventionalDependencyRegistrar.cs" />
+    <Compile Include="Abp\Dependency\IConventionalRegistrationContext.cs" />
+    <Compile Include="Abp\Dependency\IDisposableDependencyObjectWrapper.cs" />
+    <Compile Include="Abp\Dependency\IDisposableDependencyObjectWrapperOfT.cs" />
+    <Compile Include="Abp\Dependency\IIocManager.cs" />
+    <Compile Include="Abp\Dependency\IIocManagerAccessor.cs" />
+    <Compile Include="Abp\Dependency\IIocRegistrar.cs" />
+    <Compile Include="Abp\Dependency\IIocResolver.cs" />
+    <Compile Include="Abp\Dependency\Installers\AbpCoreInstaller.cs" />
+    <Compile Include="Abp\Dependency\IocManager.cs" />
+    <Compile Include="Abp\Dependency\IocRegistrarExtensions.cs" />
+    <Compile Include="Abp\Dependency\IocResolverExtensions.cs" />
+    <Compile Include="Abp\Dependency\IScopedIocResolver.cs" />
+    <Compile Include="Abp\Dependency\ISingletonDependency.cs" />
+    <Compile Include="Abp\Dependency\ITransientDependency.cs" />
+    <Compile Include="Abp\Dependency\ScopedIocResolver.cs" />
+    <Compile Include="Abp\Dependency\SingletonDependency.cs" />
+    <Compile Include="Abp\DisposeAction.cs" />
+    <Compile Include="Abp\Domain\Entities\AggregateRoot.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\AuditedAggregateRoot.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\AuditedEntity.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\CreationAuditedAggregateRoot.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\CreationAuditedEntity.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\FullAuditedAggregateRoot.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\FullAuditedEntity.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IAudited.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\ICreationAudited.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IDeletionAudited.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IFullAudited.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IHasCreationTime.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IHasDeletionTime.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IHasModificationTime.cs" />
+    <Compile Include="Abp\Domain\Entities\Auditing\IModificationAudited.cs" />
+    <Compile Include="Abp\Domain\Entities\Caching\EntityCache.cs" />
+    <Compile Include="Abp\Domain\Entities\Caching\IEntityCache.cs" />
+    <Compile Include="Abp\Domain\Entities\Entity.cs" />
+    <Compile Include="Abp\Domain\Entities\EntityExtensions.cs" />
+    <Compile Include="Abp\Domain\Entities\EntityHelper.cs" />
+    <Compile Include="Abp\Domain\Entities\EntityIdentifier.cs" />
+    <Compile Include="Abp\Domain\Entities\EntityNotFoundException.cs" />
+    <Compile Include="Abp\Domain\Entities\IAggregateRoot.cs" />
+    <Compile Include="Abp\Domain\Entities\IEntity.cs" />
+    <Compile Include="Abp\Domain\Entities\IEntityOfTPrimaryKey.cs" />
+    <Compile Include="Abp\Domain\Entities\IMayHaveTenant.cs" />
+    <Compile Include="Abp\Domain\Entities\IMustHaveTenant.cs" />
+    <Compile Include="Abp\Domain\Entities\IPassivable.cs" />
+    <Compile Include="Abp\Domain\Entities\ISoftDelete.cs" />
+    <Compile Include="Abp\Domain\Policies\IPolicy.cs" />
+    <Compile Include="Abp\Domain\Repositories\AbpRepositoryBase.cs" />
+    <Compile Include="Abp\Domain\Repositories\IRepository.cs" />
+    <Compile Include="Abp\Domain\Repositories\IRepositoryOfTEntity.cs" />
+    <Compile Include="Abp\Domain\Repositories\IRepositoryOfTEntityAndTPrimaryKey.cs" />
+    <Compile Include="Abp\Domain\Services\DomainService.cs" />
+    <Compile Include="Abp\Domain\Services\IDomainService.cs" />
+    <Compile Include="Abp\Domain\Uow\AbpDataFilters.cs" />
+    <Compile Include="Abp\Domain\Uow\CallContextCurrentUnitOfWorkProvider.cs" />
+    <Compile Include="Abp\Domain\Uow\ConnectionStringResolveArgs.cs" />
+    <Compile Include="Abp\Domain\Uow\DataFilterConfiguration.cs" />
+    <Compile Include="Abp\Domain\Uow\DefaultConnectionStringResolver.cs" />
+    <Compile Include="Abp\Domain\Uow\IActiveUnitOfWork.cs" />
+    <Compile Include="Abp\Domain\Uow\IConnectionStringResolver.cs" />
+    <Compile Include="Abp\Domain\Uow\ICurrentUnitOfWorkProvider.cs" />
+    <Compile Include="Abp\Domain\Uow\InnerUnitOfWorkCompleteHandle.cs" />
+    <Compile Include="Abp\Domain\Uow\IUnitOfWork.cs" />
+    <Compile Include="Abp\Domain\Uow\IUnitOfWorkCompleteHandle.cs" />
+    <Compile Include="Abp\Domain\Uow\IUnitOfWorkDefaultOptions.cs" />
+    <Compile Include="Abp\Domain\Uow\IUnitOfWorkFilterExecuter.cs" />
+    <Compile Include="Abp\Domain\Uow\IUnitOfWorkManager.cs" />
+    <Compile Include="Abp\Domain\Uow\NullUnitOfWork.cs" />
+    <Compile Include="Abp\Domain\Uow\NullUnitOfWorkFilterExecuter.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkAttribute.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkBase.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkDefaultOptions.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkFailedEventArgs.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkHelper.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkInterceptor.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkManager.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkOptions.cs" />
+    <Compile Include="Abp\Domain\Uow\UnitOfWorkRegistrar.cs" />
+    <Compile Include="Abp\Domain\Values\ValueObject.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\DomainEventEntry.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityChangedEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityChangeEntry.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityChangeEventHelper.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityChangeReport.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityChangeType.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityChangingEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityCreatedEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityCreatingEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityDeletedEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityDeletingEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityUpdatedEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\EntityUpdatingEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\IEntityChangeEventHelper.cs" />
+    <Compile Include="Abp\Events\Bus\Entities\NullEntityChangeEventHelper.cs" />
+    <Compile Include="Abp\Events\Bus\EventBus.cs" />
+    <Compile Include="Abp\Events\Bus\EventBusInstaller.cs" />
+    <Compile Include="Abp\Events\Bus\EventData.cs" />
+    <Compile Include="Abp\Events\Bus\Exceptions\AbpHandledExceptionData.cs" />
+    <Compile Include="Abp\Events\Bus\Exceptions\ExceptionData.cs" />
+    <Compile Include="Abp\Events\Bus\Factories\IEventHandlerFactory.cs" />
+    <Compile Include="Abp\Events\Bus\Factories\Internals\FactoryUnregistrar.cs" />
+    <Compile Include="Abp\Events\Bus\Factories\Internals\SingleInstanceHandlerFactory.cs" />
+    <Compile Include="Abp\Events\Bus\Factories\Internals\TransientEventHandlerFactory.cs" />
+    <Compile Include="Abp\Events\Bus\Factories\IocHandlerFactory.cs" />
+    <Compile Include="Abp\Events\Bus\Handlers\IEventHandler.cs" />
+    <Compile Include="Abp\Events\Bus\Handlers\IEventHandlerOfTEventData.cs" />
+    <Compile Include="Abp\Events\Bus\Handlers\Internals\ActionEventHandler.cs" />
+    <Compile Include="Abp\Events\Bus\IEventBus.cs" />
+    <Compile Include="Abp\Events\Bus\IEventData.cs" />
+    <Compile Include="Abp\Events\Bus\IEventDataWithInheritableGenericArgument.cs" />
+    <Compile Include="Abp\Events\Bus\NullEventBus.cs" />
+    <Compile Include="Abp\Extensions\ComparableExtensions.cs" />
+    <Compile Include="Abp\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Abp\Extensions\DateTimeRangeExtensions.cs" />
+    <Compile Include="Abp\Extensions\DayOfWeekExtensions.cs" />
+    <Compile Include="Abp\Extensions\EventHandlerExtensions.cs" />
+    <Compile Include="Abp\Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Abp\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Abp\Extensions\StringExtensions.cs" />
+    <Compile Include="Abp\IGuidGenerator.cs" />
+    <Compile Include="Abp\IHasErrorCode.cs" />
+    <Compile Include="Abp\IO\DirectoryHelper.cs" />
+    <Compile Include="Abp\IO\Extensions\StreamExtensions.cs" />
+    <Compile Include="Abp\IO\FileHelper.cs" />
+    <Compile Include="Abp\IShouldInitialize.cs" />
+    <Compile Include="Abp\IUserIdentifier.cs" />
+    <Compile Include="Abp\Json\AbpDateTimeConverter.cs" />
+    <Compile Include="Abp\Json\JsonExtensions.cs" />
+    <Compile Include="Abp\Json\JsonSerializationHelper.cs" />
+    <Compile Include="Abp\Linq\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Abp\Linq\IAsyncQueryableExecuter.cs" />
+    <Compile Include="Abp\Linq\NullAsyncQueryableExecuter.cs" />
+    <Compile Include="Abp\Localization\AbpDisplayNameAttribute.cs" />
+    <Compile Include="Abp\Localization\DefaultLanguageProvider.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\DictionaryBasedLocalizationSource.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\IDictionaryBasedLocalizationSource.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\ILocalizationDictionary.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\ILocalizationDictionaryProvider.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Json\JsonEmbeddedFileLocalizationDictionaryProvider.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Json\JsonFileLocalizationDictionaryProvider.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Json\JsonLocalizationDictionary.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Json\JsonLocalizationFile.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\LocalizationDictionary.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Utf8Helper.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Xml\LocalizationDictionaryProviderBase.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Xml\XmlEmbeddedFileLocalizationDictionaryProvider.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Xml\XmlFileLocalizationDictionaryProvider.cs" />
+    <Compile Include="Abp\Localization\Dictionaries\Xml\XmlLocalizationDictionary.cs" />
+    <Compile Include="Abp\Localization\FixedLocalizableString.cs" />
+    <Compile Include="Abp\Localization\GlobalizationHelper.cs" />
+    <Compile Include="Abp\Localization\ILanguageManager.cs" />
+    <Compile Include="Abp\Localization\ILanguageProvider.cs" />
+    <Compile Include="Abp\Localization\ILocalizableString.cs" />
+    <Compile Include="Abp\Localization\ILocalizationContext.cs" />
+    <Compile Include="Abp\Localization\ILocalizationManager.cs" />
+    <Compile Include="Abp\Localization\LanguageInfo.cs" />
+    <Compile Include="Abp\Localization\LanguageManager.cs" />
+    <Compile Include="Abp\Localization\LocalizableString.cs" />
+    <Compile Include="Abp\Localization\LocalizableStringToStringJsonConverter.cs" />
+    <Compile Include="Abp\Localization\LocalizationContext.cs" />
+    <Compile Include="Abp\Localization\LocalizationHelper.cs" />
+    <Compile Include="Abp\Localization\LocalizationManager.cs" />
+    <Compile Include="Abp\Localization\LocalizationManagerExtensions.cs" />
+    <Compile Include="Abp\Localization\LocalizationSettingNames.cs" />
+    <Compile Include="Abp\Localization\LocalizationSettingProvider.cs" />
+    <Compile Include="Abp\Localization\LocalizationSourceHelper.cs" />
+    <Compile Include="Abp\Localization\LocalizedString.cs" />
+    <Compile Include="Abp\Localization\NullLocalizationManager.cs" />
+    <Compile Include="Abp\Localization\Sources\ILocalizationSource.cs" />
+    <Compile Include="Abp\Localization\Sources\LocalizationSourceExtensionInfo.cs" />
+    <Compile Include="Abp\Localization\Sources\LocalizationSourceExtensions.cs" />
+    <Compile Include="Abp\Localization\Sources\NullLocalizationSource.cs" />
+    <Compile Include="Abp\Localization\Sources\Resource\ResourceFileLocalizationSource.cs" />
+    <Compile Include="Abp\Logging\IHasLogSeverity.cs" />
+    <Compile Include="Abp\Logging\LoggerExtensions.cs" />
+    <Compile Include="Abp\Logging\LogHelper.cs" />
+    <Compile Include="Abp\Logging\LogSeverity.cs" />
+    <Compile Include="Abp\Modules\AbpModule.cs" />
+    <Compile Include="Abp\Modules\AbpModuleCollection.cs" />
+    <Compile Include="Abp\Modules\AbpModuleInfo.cs" />
+    <Compile Include="Abp\Modules\AbpModuleManager.cs" />
+    <Compile Include="Abp\Modules\DependsOnAttribute.cs" />
+    <Compile Include="Abp\Modules\IAbpModuleManager.cs" />
+    <Compile Include="Abp\MultiTenancy\ITenantResolveContributor.cs" />
+    <Compile Include="Abp\MultiTenancy\ITenantResolver.cs" />
+    <Compile Include="Abp\MultiTenancy\ITenantResolverCache.cs" />
+    <Compile Include="Abp\MultiTenancy\ITenantStore.cs" />
+    <Compile Include="Abp\MultiTenancy\MultiTenancyConsts.cs" />
+    <Compile Include="Abp\MultiTenancy\MultiTenancyExtensions.cs" />
+    <Compile Include="Abp\MultiTenancy\MultiTenancySideAttribute.cs" />
+    <Compile Include="Abp\MultiTenancy\MultiTenancySides.cs" />
+    <Compile Include="Abp\MultiTenancy\NullTenantResolverCache.cs" />
+    <Compile Include="Abp\MultiTenancy\NullTenantStore.cs" />
+    <Compile Include="Abp\MultiTenancy\TenantInfo.cs" />
+    <Compile Include="Abp\MultiTenancy\TenantResolver.cs" />
+    <Compile Include="Abp\MultiTenancy\TenantResolverCacheItem.cs" />
+    <Compile Include="Abp\NamedTypeSelector.cs" />
+    <Compile Include="Abp\NameValue.cs" />
+    <Compile Include="Abp\Net\Mail\EmailSenderBase.cs" />
+    <Compile Include="Abp\Net\Mail\EmailSenderConfiguration.cs" />
+    <Compile Include="Abp\Net\Mail\EmailSettingNames.cs" />
+    <Compile Include="Abp\Net\Mail\EmailSettingProvider.cs" />
+    <Compile Include="Abp\Net\Mail\IEmailSender.cs" />
+    <Compile Include="Abp\Net\Mail\IEmailSenderConfiguration.cs" />
+    <Compile Include="Abp\Net\Mail\NullEmailSender.cs" />
+    <Compile Include="Abp\Net\Mail\Smtp\ISmtpEmailSender.cs" />
+    <Compile Include="Abp\Net\Mail\Smtp\ISmtpEmailSenderConfiguration.cs" />
+    <Compile Include="Abp\Net\Mail\Smtp\SmtpEmailSender.cs" />
+    <Compile Include="Abp\Net\Mail\Smtp\SmtpEmailSenderConfiguration.cs" />
+    <Compile Include="Abp\Notifications\INotificationConfiguration.cs" />
+    <Compile Include="Abp\Notifications\INotificationDefinitionContext.cs" />
+    <Compile Include="Abp\Notifications\INotificationDefinitionManager.cs" />
+    <Compile Include="Abp\Notifications\INotificationDistributer.cs" />
+    <Compile Include="Abp\Notifications\INotificationPublisher.cs" />
+    <Compile Include="Abp\Notifications\INotificationStore.cs" />
+    <Compile Include="Abp\Notifications\INotificationSubscriptionManager.cs" />
+    <Compile Include="Abp\Notifications\IRealTimeNotifier.cs" />
+    <Compile Include="Abp\Notifications\IUserNotificationManager.cs" />
+    <Compile Include="Abp\Notifications\LocalizableMessageNotificationData.cs" />
+    <Compile Include="Abp\Notifications\MessageNotificationData.cs" />
+    <Compile Include="Abp\Notifications\NotificationConfiguration.cs" />
+    <Compile Include="Abp\Notifications\NotificationData.cs" />
+    <Compile Include="Abp\Notifications\NotificationDefinition.cs" />
+    <Compile Include="Abp\Notifications\NotificationDefinitionContext.cs" />
+    <Compile Include="Abp\Notifications\NotificationDefinitionManager.cs" />
+    <Compile Include="Abp\Notifications\NotificationDefinitionManagerExtensions.cs" />
+    <Compile Include="Abp\Notifications\NotificationDistributer.cs" />
+    <Compile Include="Abp\Notifications\NotificationDistributionJob.cs" />
+    <Compile Include="Abp\Notifications\NotificationDistributionJobArgs.cs" />
+    <Compile Include="Abp\Notifications\NotificationExtensions.cs" />
+    <Compile Include="Abp\Notifications\NotificationInfo.cs" />
+    <Compile Include="Abp\Notifications\NotificationProvider.cs" />
+    <Compile Include="Abp\Notifications\NotificationPublisher.cs" />
+    <Compile Include="Abp\Notifications\NotificationSettingNames.cs" />
+    <Compile Include="Abp\Notifications\NotificationSettingProvider.cs" />
+    <Compile Include="Abp\Notifications\NotificationSeverity.cs" />
+    <Compile Include="Abp\Notifications\NotificationSubscription.cs" />
+    <Compile Include="Abp\Notifications\NotificationSubscriptionInfo.cs" />
+    <Compile Include="Abp\Notifications\NotificationSubscriptionInfoExtensions.cs" />
+    <Compile Include="Abp\Notifications\NotificationSubscriptionManager.cs" />
+    <Compile Include="Abp\Notifications\NullNotificationStore.cs" />
+    <Compile Include="Abp\Notifications\NullRealTimeNotifier.cs" />
+    <Compile Include="Abp\Notifications\TenantNotification.cs" />
+    <Compile Include="Abp\Notifications\TenantNotificationInfo.cs" />
+    <Compile Include="Abp\Notifications\TenantNotificationInfoExtensions.cs" />
+    <Compile Include="Abp\Notifications\UserNotification.cs" />
+    <Compile Include="Abp\Notifications\UserNotificationInfo.cs" />
+    <Compile Include="Abp\Notifications\UserNotificationInfoExtensions.cs" />
+    <Compile Include="Abp\Notifications\UserNotificationInfoWithNotificationInfo.cs" />
+    <Compile Include="Abp\Notifications\UserNotificationInfoWithNotificationInfoExtensions.cs" />
+    <Compile Include="Abp\Notifications\UserNotificationManager.cs" />
+    <Compile Include="Abp\Notifications\UserNotificationState.cs" />
+    <Compile Include="Abp\ObjectMapping\IObjectMapper.cs" />
+    <Compile Include="Abp\ObjectMapping\NullObjectMapper.cs" />
+    <Compile Include="Abp\PlugIns\AbpPlugInManager.cs" />
+    <Compile Include="Abp\PlugIns\AssemblyFileListPlugInSource.cs" />
+    <Compile Include="Abp\PlugIns\FolderPlugInSource.cs" />
+    <Compile Include="Abp\PlugIns\IAbpPlugInManager.cs" />
+    <Compile Include="Abp\PlugIns\IPlugInSource.cs" />
+    <Compile Include="Abp\PlugIns\PlugInSourceExtensions.cs" />
+    <Compile Include="Abp\PlugIns\PlugInSourceList.cs" />
+    <Compile Include="Abp\PlugIns\PlugInSourceListExtensions.cs" />
+    <Compile Include="Abp\PlugIns\PlugInTypeListSource.cs" />
+    <Compile Include="Abp\RandomHelper.cs" />
+    <Compile Include="Abp\RealTime\IOnlineClient.cs" />
+    <Compile Include="Abp\RealTime\IOnlineClientManager.cs" />
+    <Compile Include="Abp\RealTime\OnlineClient.cs" />
+    <Compile Include="Abp\RealTime\OnlineClientEventArgs.cs" />
+    <Compile Include="Abp\RealTime\OnlineClientExtensions.cs" />
+    <Compile Include="Abp\RealTime\OnlineClientManager.cs" />
+    <Compile Include="Abp\RealTime\OnlineClientManagerExtensions.cs" />
+    <Compile Include="Abp\RealTime\OnlineUserEventArgs.cs" />
+    <Compile Include="Abp\Reflection\AbpAssemblyFinder.cs" />
+    <Compile Include="Abp\Reflection\AssemblyHelper.cs" />
+    <Compile Include="Abp\Reflection\Extensions\AssemblyExtensions.cs" />
+    <Compile Include="Abp\Reflection\Extensions\MemberInfoExtensions.cs" />
+    <Compile Include="Abp\Reflection\IAssemblyFinder.cs" />
+    <Compile Include="Abp\Reflection\ITypeFinder.cs" />
+    <Compile Include="Abp\Reflection\ReflectionHelper.cs" />
+    <Compile Include="Abp\Reflection\TypeFinder.cs" />
+    <Compile Include="Abp\Reflection\TypeHelper.cs" />
+    <Compile Include="Abp\RegularGuidGenerator.cs" />
+    <Compile Include="Abp\Resources\Embedded\EmbeddedFilePathHelper.cs" />
+    <Compile Include="Abp\Resources\Embedded\EmbeddedResourceItem.cs" />
+    <Compile Include="Abp\Resources\Embedded\EmbeddedResourceManager.cs" />
+    <Compile Include="Abp\Resources\Embedded\EmbeddedResourcesConfiguration.cs" />
+    <Compile Include="Abp\Resources\Embedded\EmbeddedResourceSet.cs" />
+    <Compile Include="Abp\Resources\Embedded\IEmbeddedResourceManager.cs" />
+    <Compile Include="Abp\Resources\Embedded\IEmbeddedResourcesConfiguration.cs" />
+    <Compile Include="Abp\Runtime\Caching\AbpCacheNames.cs" />
+    <Compile Include="Abp\Runtime\Caching\CacheBase.cs" />
+    <Compile Include="Abp\Runtime\Caching\CacheExtensions.cs" />
+    <Compile Include="Abp\Runtime\Caching\CacheManagerBase.cs" />
+    <Compile Include="Abp\Runtime\Caching\CacheManagerExtensions.cs" />
+    <Compile Include="Abp\Runtime\Caching\Configuration\CacheConfigurator.cs" />
+    <Compile Include="Abp\Runtime\Caching\Configuration\CachingConfiguration.cs" />
+    <Compile Include="Abp\Runtime\Caching\Configuration\ICacheConfigurator.cs" />
+    <Compile Include="Abp\Runtime\Caching\Configuration\ICachingConfiguration.cs" />
+    <Compile Include="Abp\Runtime\Caching\ICache.cs" />
+    <Compile Include="Abp\Runtime\Caching\ICacheManager.cs" />
+    <Compile Include="Abp\Runtime\Caching\ITypedCache.cs" />
+    <Compile Include="Abp\Runtime\Caching\Memory\AbpMemoryCache.cs" />
+    <Compile Include="Abp\Runtime\Caching\Memory\AbpMemoryCacheManager.cs" />
+    <Compile Include="Abp\Runtime\Caching\TypedCacheExtensions.cs" />
+    <Compile Include="Abp\Runtime\Caching\TypedCacheWrapper.cs" />
+    <Compile Include="Abp\Runtime\IAmbientDataContext.cs" />
+    <Compile Include="Abp\Runtime\IAmbientScopeProvider.cs" />
+    <Compile Include="Abp\Runtime\Remoting\CallContextAmbientDataContext.cs" />
+    <Compile Include="Abp\Runtime\Remoting\DataContextAmbientScopeProvider.cs" />
+    <Compile Include="Abp\Runtime\Security\AbpClaims.cs" />
+    <Compile Include="Abp\Runtime\Security\ClaimsIdentityExtensions.cs" />
+    <Compile Include="Abp\Runtime\Security\SimpleStringCipher.cs" />
+    <Compile Include="Abp\Runtime\Serialization\BinarySerializationHelper.cs" />
+    <Compile Include="Abp\Runtime\Session\AbpSessionBase.cs" />
+    <Compile Include="Abp\Runtime\Session\AbpSessionExtensions.cs" />
+    <Compile Include="Abp\Runtime\Session\ClaimsAbpSession.cs" />
+    <Compile Include="Abp\Runtime\Session\DefaultPrincipalAccessor.cs" />
+    <Compile Include="Abp\Runtime\Session\IAbpSession.cs" />
+    <Compile Include="Abp\Runtime\Session\IPrincipalAccessor.cs" />
+    <Compile Include="Abp\Runtime\Session\NullAbpSession.cs" />
+    <Compile Include="Abp\Runtime\Session\SessionOverride.cs" />
+    <Compile Include="Abp\Runtime\Validation\AbpValidationException.cs" />
+    <Compile Include="Abp\Runtime\Validation\AlwaysValidValueValidator.cs" />
+    <Compile Include="Abp\Runtime\Validation\BooleanValueValidator.cs" />
+    <Compile Include="Abp\Runtime\Validation\CustomValidationContext.cs" />
+    <Compile Include="Abp\Runtime\Validation\DisableValidationAttribute.cs" />
+    <Compile Include="Abp\Runtime\Validation\EnableValidationAttribute.cs" />
+    <Compile Include="Abp\Runtime\Validation\ICustomValidate.cs" />
+    <Compile Include="Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs" />
+    <Compile Include="Abp\Runtime\Validation\Interception\ValidationInterceptor.cs" />
+    <Compile Include="Abp\Runtime\Validation\Interception\ValidationInterceptorRegistrar.cs" />
+    <Compile Include="Abp\Runtime\Validation\IShouldNormalize.cs" />
+    <Compile Include="Abp\Runtime\Validation\IValueValidator.cs" />
+    <Compile Include="Abp\Runtime\Validation\NumericValueValidator.cs" />
+    <Compile Include="Abp\Runtime\Validation\StringValueValidator.cs" />
+    <Compile Include="Abp\Runtime\Validation\ValidatorAttribute.cs" />
+    <Compile Include="Abp\Runtime\Validation\ValueValidatorBase.cs" />
+    <Compile Include="Abp\SequentialGuidGenerator.cs" />
+    <Compile Include="Abp\Specifications\AndNotSpecification.cs" />
+    <Compile Include="Abp\Specifications\AndSpecification.cs" />
+    <Compile Include="Abp\Specifications\AnySpecification.cs" />
+    <Compile Include="Abp\Specifications\CompositeSpecification.cs" />
+    <Compile Include="Abp\Specifications\ExpressionFuncExtender.cs" />
+    <Compile Include="Abp\Specifications\ExpressionSpecification.cs" />
+    <Compile Include="Abp\Specifications\ICompositeSpecification.cs" />
+    <Compile Include="Abp\Specifications\ISpecification.cs" />
+    <Compile Include="Abp\Specifications\ISpecificationParser.cs" />
+    <Compile Include="Abp\Specifications\NoneSpecification.cs" />
+    <Compile Include="Abp\Specifications\NotSpecification.cs" />
+    <Compile Include="Abp\Specifications\OrSpecification.cs" />
+    <Compile Include="Abp\Specifications\ParameterRebinder.cs" />
+    <Compile Include="Abp\Specifications\Specification.cs" />
+    <Compile Include="Abp\Specifications\SpecificationExtensions.cs" />
+    <Compile Include="Abp\Text\FormattedStringValueExtracter.cs" />
+    <Compile Include="Abp\Text\Formatting\FormatStringToken.cs" />
+    <Compile Include="Abp\Text\Formatting\FormatStringTokenizer.cs" />
+    <Compile Include="Abp\Text\Formatting\FormatStringTokenType.cs" />
+    <Compile Include="Abp\Threading\AsyncHelper.cs" />
+    <Compile Include="Abp\Threading\BackgroundWorkers\BackgroundWorkerBase.cs" />
+    <Compile Include="Abp\Threading\BackgroundWorkers\BackgroundWorkerManager.cs" />
+    <Compile Include="Abp\Threading\BackgroundWorkers\IBackgroundWorker.cs" />
+    <Compile Include="Abp\Threading\BackgroundWorkers\IBackgroundWorkerManager.cs" />
+    <Compile Include="Abp\Threading\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs" />
+    <Compile Include="Abp\Threading\Extensions\LockExtensions.cs" />
+    <Compile Include="Abp\Threading\InternalAsyncHelper.cs" />
+    <Compile Include="Abp\Threading\IRunnable.cs" />
+    <Compile Include="Abp\Threading\RunnableBase.cs" />
+    <Compile Include="Abp\Threading\RunnableExtensions.cs" />
+    <Compile Include="Abp\Threading\ThreadCultureSanitizer.cs" />
+    <Compile Include="Abp\Threading\Timers\AbpTimer.cs" />
+    <Compile Include="Abp\Timing\Clock.cs" />
+    <Compile Include="Abp\Timing\ClockProviders.cs" />
+    <Compile Include="Abp\Timing\DateTimeRange.cs" />
+    <Compile Include="Abp\Timing\IClockProvider.cs" />
+    <Compile Include="Abp\Timing\IDateTimeRange.cs" />
+    <Compile Include="Abp\Timing\LocalClockProvider.cs" />
+    <Compile Include="Abp\Timing\Timezone\ITimeZoneConverter.cs" />
+    <Compile Include="Abp\Timing\Timezone\TimeZoneConverter.cs" />
+    <Compile Include="Abp\Timing\Timezone\TimezoneHelper.cs" />
+    <Compile Include="Abp\Timing\TimingSettingNames.cs" />
+    <Compile Include="Abp\Timing\TimingSettingProvider.cs" />
+    <Compile Include="Abp\Timing\UnspecifiedClockProvider.cs" />
+    <Compile Include="Abp\Timing\UtcClockProvider.cs" />
+    <Compile Include="Abp\Transactions\Extensions\IsolationLevelExtensions.cs" />
+    <Compile Include="Abp\UI\Inputs\CheckboxInputType.cs" />
+    <Compile Include="Abp\UI\Inputs\ComboboxInputType.cs" />
+    <Compile Include="Abp\UI\Inputs\IInputType.cs" />
+    <Compile Include="Abp\UI\Inputs\ILocalizableComboboxItem.cs" />
+    <Compile Include="Abp\UI\Inputs\ILocalizableComboboxItemSource.cs" />
+    <Compile Include="Abp\UI\Inputs\InputTypeAttribute.cs" />
+    <Compile Include="Abp\UI\Inputs\InputTypeBase.cs" />
+    <Compile Include="Abp\UI\Inputs\LocalizableComboboxItem.cs" />
+    <Compile Include="Abp\UI\Inputs\SingleLineStringInputType.cs" />
+    <Compile Include="Abp\UI\Inputs\StaticLocalizableComboboxItemSource.cs" />
+    <Compile Include="Abp\UI\UserFriendlyException.cs" />
+    <Compile Include="Abp\UserIdentifier.cs" />
+    <Compile Include="Abp\UserIdentifierExtensions.cs" />
+    <Compile Include="Abp\Utils\Etc\NullDisposable.cs" />
+    <Compile Include="Abp\Web\Models\DontWrapResultAttribute.cs" />
+    <Compile Include="Abp\Web\Models\WrapResultAttribute.cs" />
+    <Compile Include="Abp\Xml\Extensions\XmlExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-ca-ES.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-de.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-es.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-fr.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-it.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-lt.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-lv.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-pt-BR.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-ru.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-tr.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-uk.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb-zh-CN.xml" />
+    <Content Include="Abp.Web.Common\Web\Localization\AbpWebXmlSource\AbpWeb.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-ca-ES.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-de.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-es.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-fr.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-it.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-lt.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-lv.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-pt-BR.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-ru.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-tr.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-uk.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp-zh-CN.xml" />
+    <Content Include="Abp\Localization\Sources\AbpXmlSource\Abp.xml" />
+    <Content Include="Abp\Timing\Timezone\Mapping\WindowsZones.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

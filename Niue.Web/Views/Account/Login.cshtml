@@ -1,0 +1,74 @@
+﻿@using Microsoft.Owin.Security
+@using Niue.Abp.Abp.Web.Mvc.Web.Mvc.Extensions
+@using Niue.Abp.Zero.Abp.Zero.Authorization.Users
+@model Niue.Web.Models.Account.LoginFormViewModel
+@section Styles
+{
+    @Html.IncludeStyle("~/Views/Account/Login.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Views/Account/Login.js")
+}
+
+<div class="IndexContent">
+    <form action="@(Url.Action("Login", "Account"))?returnUrl=@(Model.ReturnUrl)" id="LoginForm" method="POST">
+        <div class="LoginBox">
+            <p class="LoginTitle">云智能设备服务平台</p>
+            <div class="LoginContent">
+                <div class="LoginContentLeft">
+                    <p>一站式智能科技服务</p>
+                    <div class="IconBox">
+                        <i></i>
+                    </div>
+                </div>
+                <div class="LoginContentRight">
+                    <p class="LoginContentTitle">用户登录</p>
+                    <ul class="LoginInfo">
+                        <li>
+                            <p>登录帐号</p>
+                            <div class="LoginInfoText">
+                                <input id="EmailAddressInput" maxlength="@AbpUserBase.MaxEmailAddressLength" placeholder="手机号" required type="text">
+                            </div>
+                        </li>
+                        <li>
+                            <p>登录密码</p>
+                            <div class="LoginInfoText">
+                                <input id="PasswordInput" maxlength="@Niue.Core.Users.User.MaxPlainPasswordLength" placeholder="登录密码(8 - 16 位)" required type="password">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="SubmitBtn" data-ng-0="submit()" id="LoginButton">立即登录</div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    @{
+        var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().ToList();
+    }
+
+    @if (loginProviders.Count > 0)
+    {
+        <p>@L("OrLoginWith"):</p>
+
+
+        using (Html.BeginForm("ExternalLogin", "Account", method: FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+            <input type="hidden" name="provider" value="" />
+
+            foreach (var provider in loginProviders)
+            {
+                <a class="btn btn-default btn-sm social-login-link" title="@provider.AuthenticationType"
+                   data-provider="@provider.AuthenticationType"
+                   href="javascript:;">
+                    <i class="fa fa-@(provider.AuthenticationType.ToLower())"></i> @provider.AuthenticationType
+                </a>
+            }
+        }
+    }
+
+</div>

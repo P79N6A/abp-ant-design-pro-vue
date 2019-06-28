@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Editor directories and files
+.vscode
+*.ntvs*
+*.njsproj
+*.sw*
+
 # User-specific files
 *.suo
 *.user
@@ -11,6 +17,9 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+
+#iOS
+.DS_Store
 
 # Build results
 [Dd]ebug/
@@ -23,6 +32,14 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+cms/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.*.local
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

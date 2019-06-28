@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0404380-9A09-44F3-80F1-903C323CFC19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Niue.Application</RootNamespace>
+    <AssemblyName>Niue.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationServices\Cities\CityAppService.cs" />
+    <Compile Include="ApplicationServices\Cities\Dto\CityDto.cs" />
+    <Compile Include="ApplicationServices\Cities\Dto\GetCitiesInput.cs" />
+    <Compile Include="ApplicationServices\Cities\ICityAppService.cs" />
+    <Compile Include="AppServices\AppAlipays\AppAlipayService.cs" />
+    <Compile Include="AppServices\AppAlipays\Dto\GetPayInfoInput.cs" />
+    <Compile Include="AppServices\AppAlipays\Dto\PayNotifyInput.cs" />
+    <Compile Include="AppServices\AppAlipays\Dto\TestLiveInput.cs" />
+    <Compile Include="AppServices\AppAlipays\IAppAlipayService.cs" />
+    <Compile Include="AppServices\AppWeChatPays\AppWeChatPayService.cs" />
+    <Compile Include="AppServices\AppWeChatPays\Dto\GetPayInfoInput.cs" />
+    <Compile Include="AppServices\AppWeChatPays\Dto\PayNotifyInput.cs" />
+    <Compile Include="AppServices\AppWeChatPays\IAppWeChatPayService.cs" />
+    <Compile Include="BackgroundJobs\Args\SendSmsArgs.cs" />
+    <Compile Include="BackgroundJobs\Jobs\JPushJob.cs" />
+    <Compile Include="BackgroundJobs\Jobs\SendSmsJob.cs" />
+    <Compile Include="BackgroundJobs\Workers\JPushWorker.cs" />
+    <Compile Include="BaseDto\PaginationDto.cs" />
+    <Compile Include="BaseDto\SortDto.cs" />
+    <Compile Include="Routers\Dto\RouterDto.cs" />
+    <Compile Include="NiueApplicationModule.cs" />
+    <Compile Include="NiueAppServiceBase.cs" />
+    <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantListDto.cs" />
+    <Compile Include="MultiTenancy\ITenantAppService.cs" />
+    <Compile Include="MultiTenancy\TenantAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseDto\ResultDto.cs" />
+    <Compile Include="Roles\Dto\GetRolesSearchInput.cs" />
+    <Compile Include="Roles\Dto\RoleDto.cs" />
+    <Compile Include="Roles\Dto\UpdateRolePermissionsInput.cs" />
+    <Compile Include="Roles\IRoleAppService.cs" />
+    <Compile Include="Roles\RoleAppService.cs" />
+    <Compile Include="Routers\IRouterAppService.cs" />
+    <Compile Include="Routers\RouterAppService.cs" />
+    <Compile Include="Sessions\ISessionAppService.cs" />
+    <Compile Include="Sessions\SessionAppService.cs" />
+    <Compile Include="Roles\Dto\EditRoleInput.cs" />
+    <Compile Include="Users\Dto\GetUsersInput.cs" />
+    <Compile Include="Sessions\Dto\UserInfoDto.cs" />
+    <Compile Include="Users\Dto\UserDto.cs" />
+    <Compile Include="Users\IUserAppService.cs" />
+    <Compile Include="Users\UserAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Niue.Abp.Zero\Niue.Abp.Zero.csproj">
+      <Project>{B60ED48B-D6DC-4818-BE4D-6124AF370744}</Project>
+      <Name>Niue.Abp.Zero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Niue.Abp\Niue.Abp.csproj">
+      <Project>{15683EAE-3243-47F8-B802-3BB335B640D9}</Project>
+      <Name>Niue.Abp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Niue.Alipay\Niue.Alipay.csproj">
+      <Project>{c0720762-ef37-4215-8962-7facf46f22fb}</Project>
+      <Name>Niue.Alipay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Niue.Aliyun\Niue.Aliyun.csproj">
+      <Project>{691ED098-84C4-44D8-8D56-8F0EEDC5EC6C}</Project>
+      <Name>Niue.Aliyun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Niue.Common\Niue.Common.csproj">
+      <Project>{F92D9605-FC2F-4941-8D9D-5383695E0989}</Project>
+      <Name>Niue.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Niue.Core\Niue.Core.csproj">
+      <Project>{E0ED0B43-F6BF-40D9-9BD0-FED0150ABCBB}</Project>
+      <Name>Niue.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Niue.WeChat\Niue.WeChat.csproj">
+      <Project>{ea6cc8d8-7ffa-44f0-a5e4-ef724c6f8f53}</Project>
+      <Name>Niue.WeChat</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

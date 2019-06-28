@@ -1,0 +1,39 @@
+﻿@using Niue.Abp.Zero.Abp.Zero.Authorization.Users
+@model Niue.Web.Models.Account.RegisterViewModel
+@section Styles
+{
+    <link href="~/Views/Account/Login.css" rel="stylesheet" />
+}
+@section Scripts{
+    <script type="text/javascript" src="~/Views/Account/Register.js"></script>
+}
+<div class="log-in-wrapper" id="LoginArea">
+    @*<span class="close-btn"></span>*@
+    <div class="main-content">
+        <form action="@(Url.Action("Register","Account"))" id="LoginForm" method="POST">
+            @Html.AntiForgeryToken()
+            <img alt="" class="logo" src="/Content/images/login_logo.png">
+
+            <div class="item item-username" data-ng-class="{'error':username.tipShow}">
+                <input class="input-box ng-valid ng-dirty ng-valid-parse ng-touched" maxlength="@AbpUserBase.MaxUserNameLength" name="UserName" placeholder="手机号" required type="text" value="@Model.UserName">
+                <span class="icon"></span>
+                <span class="tooltip ng-binding ng-hide" data-ng-show="username.tipShow"></span>
+            </div>
+
+            <div class="item item-password" data-ng-class="{'error':password.tipShow}">
+                <input class="input-box ng-untouched ng-valid ng-dirty ng-valid-parse" maxlength="@Niue.Core.Users.User.MaxPlainPasswordLength" name="Password" placeholder="密码(8 - 16 位)" required type="password">
+                <span class="icon"></span>
+                <span class="tooltip ng-binding ng-hide" data-ng-show="password.tipShow"></span>
+            </div>
+
+            <div class="item item-sms" data-ng-class="{'error':sms.tipShow}">
+                <input class="input-box ng-pristine ng-untouched ng-valid" my-enter="submit()" name="Sms" placeholder="手机短信验证码" required type="text">
+                <span class="icon" data-ng-click="sendSms()" data-ng-class="{'check':sms.validate}"></span>
+                <span class="tooltip ng-binding ng-hide" data-ng-bind="sms.text" data-ng-show="sms.tipShow"></span>
+            </div>
+
+            <button class="login-btn" data-ng-mousedown="submit()" id="RegisterButton"><i class="fa fa-sign-in"></i>注册</button>
+            <p class="bottom-text">点击此处<a href="/Account/Login">去登录</a></p>
+        </form>
+    </div>
+</div>

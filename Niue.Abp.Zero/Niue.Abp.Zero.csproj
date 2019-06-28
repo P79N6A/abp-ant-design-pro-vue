@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B60ED48B-D6DC-4818-BE4D-6124AF370744}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Niue.Abp.Zero</RootNamespace>
+    <AssemblyName>Niue.Abp.Zero</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.3.4.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abp.Zero.EntityFramework\Data\ConnectionStringHelper.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\EntityFramework\Extensions\EntityFrameworkModelBuilderExtensions.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroCommonDbContext.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroDbContext.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroDbMigrator.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroDbModelBuilderExtensions.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroEntityFrameworkModule.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroHostDbContext.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\AbpZeroTenantDbContext.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\DbPerTenantConnectionStringResolver.cs" />
+    <Compile Include="Abp.Zero.EntityFramework\Zero\EntityFramework\IMultiTenantSeed.cs" />
+    <Compile Include="Abp.Zero\Application\Editions\AbpEditionManager.cs" />
+    <Compile Include="Abp.Zero\Application\Editions\Edition.cs" />
+    <Compile Include="Abp.Zero\Application\Editions\EditionfeatureCacheItem.cs" />
+    <Compile Include="Abp.Zero\Application\Features\AbpFeatureValueStore.cs" />
+    <Compile Include="Abp.Zero\Application\Features\EditionFeatureSetting.cs" />
+    <Compile Include="Abp.Zero\Application\Features\FeatureSetting.cs" />
+    <Compile Include="Abp.Zero\Application\Features\IAbpZeroFeatureValueStore.cs" />
+    <Compile Include="Abp.Zero\Auditing\AuditingStore.cs" />
+    <Compile Include="Abp.Zero\Auditing\AuditLog.cs" />
+    <Compile Include="Abp.Zero\Authorization\AbpLoginManager.cs" />
+    <Compile Include="Abp.Zero\Authorization\AbpLoginManagerExtensions.cs" />
+    <Compile Include="Abp.Zero\Authorization\PermissionChecker.cs" />
+    <Compile Include="Abp.Zero\Authorization\PermissionGrantInfo.cs" />
+    <Compile Include="Abp.Zero\Authorization\PermissionSetting.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\AbpRole.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\AbpRoleBase.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\AbpRoleManager.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\AbpRolePermissionCacheItemInvalidator.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\AbpRoleStore.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\IRolePermissionStore.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\PermissionEqualityComparer.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\RolePermissionCacheItem.cs" />
+    <Compile Include="Abp.Zero\Authorization\Roles\RolePermissionSetting.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpLoginResult.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpLoginResultType.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpUser.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpUserBase.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpUserManager.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpUserManagerExtensions.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpUserPermissionCacheItemInvalidator.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\AbpUserStore.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\DefaultExternalAuthenticationSource.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\IExternalAuthenticationSource.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\IUserPermissionStore.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\IUserTokenProviderAccessor.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\NullUserTokenProviderAccessor.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserAccount.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserAccountSynchronizer.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserClaim.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserLogin.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserLoginAttempt.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserOrganizationUnit.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserOrganizationUnitRemover.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserPermissionCacheItem.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserPermissionSetting.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserRole.cs" />
+    <Compile Include="Abp.Zero\Authorization\Users\UserRoleRemover.cs" />
+    <Compile Include="Abp.Zero\BackgroundJobs\BackgroundJobStore.cs" />
+    <Compile Include="Abp.Zero\Configuration\Setting.cs" />
+    <Compile Include="Abp.Zero\Configuration\SettingExtensions.cs" />
+    <Compile Include="Abp.Zero\Configuration\SettingStore.cs" />
+    <Compile Include="Abp.Zero\IdentityFramework\AbpIdentityResult.cs" />
+    <Compile Include="Abp.Zero\IdentityFramework\IdentityEmailService.cs" />
+    <Compile Include="Abp.Zero\IdentityFramework\IdentityResultExtensions.cs" />
+    <Compile Include="Abp.Zero\Localization\ApplicationLanguage.cs" />
+    <Compile Include="Abp.Zero\Localization\ApplicationLanguageManager.cs" />
+    <Compile Include="Abp.Zero\Localization\ApplicationLanguageProvider.cs" />
+    <Compile Include="Abp.Zero\Localization\ApplicationLanguageText.cs" />
+    <Compile Include="Abp.Zero\Localization\ApplicationLanguageTextManager.cs" />
+    <Compile Include="Abp.Zero\Localization\EmptyDictionary.cs" />
+    <Compile Include="Abp.Zero\Localization\IApplicationLanguageManager.cs" />
+    <Compile Include="Abp.Zero\Localization\IApplicationLanguageTextManager.cs" />
+    <Compile Include="Abp.Zero\Localization\IMultiTenantLocalizationDictionary.cs" />
+    <Compile Include="Abp.Zero\Localization\IMultiTenantLocalizationSource.cs" />
+    <Compile Include="Abp.Zero\Localization\MultiTenantLocalizationDictionary.cs" />
+    <Compile Include="Abp.Zero\Localization\MultiTenantLocalizationDictionaryCacheCleaner.cs" />
+    <Compile Include="Abp.Zero\Localization\MultiTenantLocalizationDictionaryCacheHelper.cs" />
+    <Compile Include="Abp.Zero\Localization\MultiTenantLocalizationDictionaryProvider.cs" />
+    <Compile Include="Abp.Zero\Localization\MultiTenantLocalizationSource.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\AbpTenant.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\AbpTenantBase.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\AbpTenantManager.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\AbpTenantManagerExtensions.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\DbPerTenantConnectionStringResolveArgs.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\IAbpZeroDbMigrator.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\IDbPerTenantConnectionStringResolver.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\ITenantCache.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantCache.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantCacheItem.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantCacheManagerExtensions.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantFeatureCacheItem.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantFeatureCacheItemInvalidator.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantFeatureSetting.cs" />
+    <Compile Include="Abp.Zero\MultiTenancy\TenantStore.cs" />
+    <Compile Include="Abp.Zero\Notifications\NotificationStore.cs" />
+    <Compile Include="Abp.Zero\Organizations\IMayHaveOrganizationUnit.cs" />
+    <Compile Include="Abp.Zero\Organizations\IMustHaveOrganizationUnit.cs" />
+    <Compile Include="Abp.Zero\Organizations\IOrganizationUnitSettings.cs" />
+    <Compile Include="Abp.Zero\Organizations\OrganizationUnit.cs" />
+    <Compile Include="Abp.Zero\Organizations\OrganizationUnitManager.cs" />
+    <Compile Include="Abp.Zero\Organizations\OrganizationUnitManagerExtensions.cs" />
+    <Compile Include="Abp.Zero\Organizations\OrganizationUnitSettings.cs" />
+    <Compile Include="Abp.Zero\Runtime\Caching\AbpZeroCacheManagerExtensions.cs" />
+    <Compile Include="Abp.Zero\Runtime\Session\AbpSessionExtensions.cs" />
+    <Compile Include="Abp.Zero\Zero\AbpZeroConsts.cs" />
+    <Compile Include="Abp.Zero\Zero\AbpZeroCoreModule.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\AbpZeroConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\AbpZeroEntityTypes.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\AbpZeroSettingNames.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\AbpZeroSettingProvider.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\IAbpZeroConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\IAbpZeroEntityTypes.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\ILanguageManagementConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\IRoleManagementConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\IUserManagementConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\LanguageManagementConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\ModuleZeroConfigurationExtensions.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\RoleManagementConfig.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\StaticRoleDefinition.cs" />
+    <Compile Include="Abp.Zero\Zero\Configuration\UserManagementConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-de.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-fr.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-it.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-lt.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-lv.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-pt-BR.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-ru.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-tr.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero-zh-CN.xml" />
+    <Content Include="Abp.Zero\Zero\Localization\Source\AbpZero.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Niue.Abp\Niue.Abp.csproj">
+      <Project>{15683eae-3243-47f8-b802-3bb335b640d9}</Project>
+      <Name>Niue.Abp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
